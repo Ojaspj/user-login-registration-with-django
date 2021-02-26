@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block css %}
+.container {
+        margin-top: 100px;
+        width: auto;
+        max-width: 680px;
+        padding: 0 15px;
+}
+{% endblock %}
+  {% block body %}
+   <div class = "container text-center ">
+    <h1>Hello, <i>User! <br>Welcome to my first user login/registration app developed using Django!</i> </h1>
+    <h5> Please <a href = "login">Sign In</a> to access the website.</h5>
+    <p>Not have account yet?<a href = 'register' > Sign Up Here</a></p>
+     <p class="mt-5 mb-4 text-muted">PrajwalJoshi &copy; 2021</p>
+
+ </div>
+
+
+ {% endblock %}
+
+
+
+ 

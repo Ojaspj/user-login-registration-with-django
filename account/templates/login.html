@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} Sign In {% endblock title %}
+{% block css %}
+
+
+{% endblock css %}
+
+{% block body %}
+<h1 class="container text-center mt-3 ">
+    <span>Sign In</span>
+</h1>
+<hr>
+<div class="container my-3 text-center">
+    <div>
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div> 
+        {% endfor %}
+    </div>
+    <form action="login" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <input type="text" id="username" name="username" placeholder="Username">
+        </div>
+        <div class="mb-3">
+            <input type="password" id="password" name="password" placeholder="Password">
+
+        </div>
+        <button class="btn btn-success" type="submit">Sign In</button><br>
+        <p class="mt-5 text-muted">PrajwalJoshi &copy; 2021</p>
+        <a href = "/" class = "btn btn-danger py-0">GO Back</a>
+
+    </form>
+    
+
+</div>
+
+{% endblock body %}

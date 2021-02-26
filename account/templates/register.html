@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %} Sign Up{% endblock title %}
+{% block body %}
+<h1 class="text-center mt-3">Sign Up</h1>
+<hr>
+<div class="container my-3 px-6 text-center">
+    <div>
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </div>
+
+    <form action="register" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="firstname" class="form-label">First Name</label><br>
+            <input type="text" class="" id="firstname" name="first_name" placeholder="First Name"><br>
+        </div>
+        <div class="mb-3">
+            <label for="lastname" class="form-label">Last Name</label><br>
+            <input type="text" id="lastname" name="last_name" placeholder="Last Name"><br>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label><br>
+            <input type="text" id="username" name="username" placeholder="Username"><br>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label><br>
+            <input type="email" id="email" name="email" placeholder="Email"><br>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Password</label><br>
+            <input type="password" id="password1" name="password1" placeholder="Password"><br>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Confirm your Password</label><br>
+            <input type="password" id="password2" name="password2" placeholder="Password"><br>
+        </div>
+        <button class="btn btn-success" type="submit">Sign Up</button>
+    </form>
+    <p class="mt-1 text-muted">PrajwalJoshi &copy; 2021</p>
+        <a href = "/" class = "btn btn-danger py-0">GO Back</a>
+
+</div>
+
+{% endblock body %}
